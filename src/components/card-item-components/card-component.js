@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Button } from "semantic-ui-react";
+import { Card, Button, Icon } from "semantic-ui-react";
 
 const CardItem = (props) => {
   const { value } = props;
@@ -15,8 +15,16 @@ const CardItem = (props) => {
         </Card.Description>
       </Card.Content>
       <Card.Content extra>
-        <Button onClick={() => props.delete(value.id)} color="red">
-          Delete
+        <Button
+          animated
+          color="red"
+          floated="right"
+          onClick={() => props.delete(value.id)}
+        >
+          <Button.Content visible>Delete</Button.Content>
+          <Button.Content hidden>
+            <Icon name="trash alternate outline" />
+          </Button.Content>
         </Button>
       </Card.Content>
     </Card>
